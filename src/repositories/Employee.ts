@@ -15,7 +15,7 @@ export function fetchEmployees(): Array<Employee> {
     const stringData = window.localStorage.getItem(LS_KEY);
     const employeeData: Array<Employee> = JSON.parse(stringData || "[]");
 
-    return convertToTree(employeeData);
+    return employeeData;
   } catch (error) {
     console.log("Error", error);
     return [];
