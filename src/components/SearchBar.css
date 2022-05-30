@@ -1,0 +1,14 @@
+.search-bar {
+    width: 100%;
+    border: 1px solid grey;
+    position: relative;
+    padding: 8px;
+}
+
+.search-bar>input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 4px;
+    border-radius: 4px;
+}
