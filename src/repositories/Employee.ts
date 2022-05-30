@@ -59,3 +59,18 @@ export function convertToTree(
       subordinates: convertToTree(array_data, employee.employeeId),
     }));
 }
+
+export function countSubordinates(
+  employee: Employee,
+  employee_data: Array<Employee>
+): number {
+  const subordinates = employee_data.filter(
+    (emp) => emp.managerId == employee.employeeId
+  );
+  return (
+    subordinates.length +
+    subordinates.reduce((total: number, current: Employee) => {
+      return total + countSubordinates(current, employee_data);
+    }, 0)
+  );
+}

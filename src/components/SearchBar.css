@@ -12,3 +12,35 @@
     padding: 4px;
     border-radius: 4px;
 }
+
+.search-bar .autocomplete {
+    position: absolute;
+    max-height: 400px;
+    overflow-y: auto;
+    width: calc(100% - 16px);
+    background-color: white;
+    box-sizing: border-box;
+    padding: 8px;
+    border: 1px solid #CCC;
+    border-top: none;
+}
+
+.autocomplete .suggestion {
+    display: block;
+    border-bottom: 1px solid #CCC;
+    padding: 3px 0;
+    cursor: pointer;
+    background-color: #FFF;
+}
+
+.autocomplete .suggestion:last-child {
+    border-bottom: none;
+}
+
+.autocomplete .suggestion:hover {
+    background-color: #F0F0F0;
+}
+
+.autocomplete .empty {
+    color: #ccc;
+}
