@@ -87,3 +87,20 @@ export function deleteEmployee(employeeId: number) {
 
   persistData(updatedEmployee);
 }
+
+export function getMaxEmployeeId(): number {
+  const employee_data = fetchEmployees();
+  if (employee_data.length == 0) return 0;
+
+  const max = Math.max(
+    ...employee_data.map((employee) => employee.employeeId || 0)
+  );
+  return max;
+}
+
+export function addEmployee(employee: Employee): void {
+  const employee_data = fetchEmployees();
+  employee_data.push(employee);
+
+  persistData(employee_data);
+}

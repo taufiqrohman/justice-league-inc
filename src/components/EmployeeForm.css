@@ -1,0 +1,25 @@
+.employee-form {
+    position: relative;
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin: 2em 0;
+}
+
+.form-group {
+    display: block;
+    width: 100%;
+    margin-bottom: 8px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+}
+.form-group input,
+.form-group select {
+    display: block;
+    width: 100%;
+
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}

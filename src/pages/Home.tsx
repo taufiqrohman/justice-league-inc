@@ -4,6 +4,8 @@ import TreeView from "../components/TreeView";
 import { EmployeeContext } from "../context/EmployeeContext";
 import Employee from "../models/employee";
 import { filterEmployee } from "../repositories/Employee";
+import { Link } from "react-router-dom";
+import Button from "../components/Button";
 
 function Home() {
   const [filtered_employees, setFilteredEmployees] = useState<Array<Employee>>(
@@ -32,6 +34,11 @@ function Home() {
   return (
     <>
       <SearchBar onSearch={setFilter} />
+      <div style={{ marginTop: "2em" }}>
+        <Link to={"/add-employee"}>
+          <Button variant="primary" label="Add Employee" />
+        </Link>
+      </div>
       <TreeView
         items={filter ? filtered_employees : context?.employee_tree || []}
         onItemDelete={(employee, index) => deleteEmployee(employee, index)}

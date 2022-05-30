@@ -7,6 +7,7 @@ export interface EmployeeContextInterface {
   employees: Array<Employee>;
   fetchEmployees: Function;
   employee_tree: Array<Employee>;
+  addEmployee: (employee: Employee) => void;
   deleteEmployee: Function;
 }
 
@@ -28,7 +29,16 @@ const EmployeeProvider = ({ children }: any) => {
   };
 
   const deleteEmployee = function (employee: Employee) {
+    if (!employee || !employee.employeeId) return;
+
     EmployeeRepositoy.deleteEmployee(employee.employeeId);
+    fetchEmployees();
+  };
+
+  const addEmployee = function (employee: Employee) {
+    if (!employee || !employee.employeeId) return;
+
+    EmployeeRepositoy.addEmployee(employee);
     fetchEmployees();
   };
 
@@ -40,6 +50,7 @@ const EmployeeProvider = ({ children }: any) => {
         fetchEmployees,
         employee_tree,
         deleteEmployee,
+        addEmployee,
       }}
     >
       {children}
