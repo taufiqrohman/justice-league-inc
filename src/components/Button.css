@@ -1,0 +1,29 @@
+.btn {
+    display: inline-block;
+    padding: 3px 1rem;
+    margin: 0 3px;
+    border-radius: 3px;
+    cursor: pointer;
+    opacity: 1;
+    transition: all 400ms ease-in;
+}
+
+.btn:hover {
+    opacity: 0.75;
+    transition: all 400ms ease-out;
+}
+
+.btn-default {
+    background-color: #ccc;
+    color: #000;
+}
+
+.btn-warning {
+    background-color: orange;
+    color: white;
+}
+
+.btn-danger {
+    background-color: darkred;
+    color: white;
+}

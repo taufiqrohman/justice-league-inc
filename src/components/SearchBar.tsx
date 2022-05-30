@@ -63,7 +63,7 @@ function SearchBar({ onSearch }: PropType) {
     <div className="search-bar">
       <input
         type="text"
-        placeholder="Search employee name"
+        placeholder="Search employee"
         onChange={onInputChange}
         onFocus={() => showAutocomplete(true)}
         onBlur={handleOnBlur}

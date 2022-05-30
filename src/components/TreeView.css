@@ -1,0 +1,14 @@
+.tree-view {
+    padding: 0.4em 0 0.4rem 1.5rem;
+}
+
+.tree-view .node {
+    margin-bottom: 8px;
+}
+
+.tree-view .node>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

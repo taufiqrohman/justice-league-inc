@@ -10,6 +10,10 @@ export function populateData(): void {
   window.localStorage.setItem(LS_KEY, JSON.stringify(data));
 }
 
+export function persistData(employee_data: Array<Employee>): void {
+  window.localStorage.setItem(LS_KEY, JSON.stringify(employee_data));
+}
+
 export function fetchEmployees(): Array<Employee> {
   try {
     const stringData = window.localStorage.getItem(LS_KEY);
@@ -73,4 +77,13 @@ export function countSubordinates(
       return total + countSubordinates(current, employee_data);
     }, 0)
   );
+}
+
+export function deleteEmployee(employeeId: number) {
+  const currentEmployee = fetchEmployees();
+  const updatedEmployee = currentEmployee.filter(
+    (employee) => employee.employeeId !== employeeId
+  );
+
+  persistData(updatedEmployee);
 }

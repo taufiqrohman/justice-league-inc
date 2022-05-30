@@ -7,6 +7,7 @@ export interface EmployeeContextInterface {
   employees: Array<Employee>;
   fetchEmployees: Function;
   employee_tree: Array<Employee>;
+  deleteEmployee: Function;
 }
 
 export var EmployeeContext =
@@ -26,9 +27,20 @@ const EmployeeProvider = ({ children }: any) => {
     }
   };
 
+  const deleteEmployee = function (employee: Employee) {
+    EmployeeRepositoy.deleteEmployee(employee.employeeId);
+    fetchEmployees();
+  };
+
   return (
     <EmployeeContext.Provider
-      value={{ employees, setEmployees, fetchEmployees, employee_tree }}
+      value={{
+        employees,
+        setEmployees,
+        fetchEmployees,
+        employee_tree,
+        deleteEmployee,
+      }}
     >
       {children}
     </EmployeeContext.Provider>

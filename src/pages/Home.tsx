@@ -17,6 +17,10 @@ function Home() {
     setFilteredEmployees(result);
   };
 
+  const deleteEmployee = function (employee: Employee, index: number) {
+    context?.deleteEmployee(employee);
+  };
+
   useEffect(() => {
     context?.fetchEmployees();
   }, []);
@@ -30,6 +34,7 @@ function Home() {
       <SearchBar onSearch={setFilter} />
       <TreeView
         items={filter ? filtered_employees : context?.employee_tree || []}
+        onItemDelete={(employee, index) => deleteEmployee(employee, index)}
       />
     </>
   );
